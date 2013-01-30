@@ -3,10 +3,9 @@
 class Fixnum
   def prime?
     square = Math.sqrt(self).floor
-    mods = []
   
-    (2..square).each do |n|  
-      mods.push(self % n)
+    mods = (2..square).collect do |n|  
+      self % n
     end 
   
     !(mods.uniq.include?(0))
