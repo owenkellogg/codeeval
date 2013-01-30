@@ -17,12 +17,10 @@ class Fixnum
   end
 end 
 
-prime_palendromes = []
-
-(2..999).each do |n|
-  if n.prime? && n.palendrome?
-    prime_palendromes.push(n)
+(2..999).to_a.reverse.each do |n|
+  if n.prime? && n.palendrome? 
+    puts n
+    break
   end
 end 
 
-puts prime_palendromes.last
