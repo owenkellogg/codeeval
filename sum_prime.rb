@@ -1,15 +1,15 @@
 # Sum the first 1000 prime numbers
 
 def is_prime?(i)
-  # A prime number is one such that for each n 
-  # in the set of integers 0 < n <= sqrt(i)
-  # i mod n == 0 OR i mod n == n 
+  # A prime number is a positive integer such that  
+  # for each n in the set of integers 1 < n <= sqrt(i)
+  # ( i mod n ) > 0 
 
   square = Math.sqrt(i).floor
   mods = []
 
-  (1..square).each do |n|  
-    mods.push(i % n) unless n == 1
+  (2..square).each do |n|  
+    mods.push(i % n)
   end 
 
   # If any value i mod n == 0 the number is not prime
